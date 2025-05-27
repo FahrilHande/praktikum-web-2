@@ -9,7 +9,7 @@ use App\Http\Controllers\ProfileController;
 
 // Halaman awal
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/register', [AuthController::class, "register"])->name('auth.register');
