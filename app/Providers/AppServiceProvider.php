@@ -52,5 +52,21 @@ class AppServiceProvider extends ServiceProvider
             }
             return false;
         });
+
+        Gate::define("view-major", function (User $user) {
+            return in_array($user->role, ["admin", "guest"]);
+        });
+
+        Gate::define("store-major", function (User $user) {
+            return $user->role === "admin";
+        });
+
+        Gate::define("edit-major", function (User $user) {
+            return $user->role === "admin";
+        });
+
+        Gate::define("destroy-major", function (User $user) {
+            return $user->role === "admin";
+        });
     }
 }
