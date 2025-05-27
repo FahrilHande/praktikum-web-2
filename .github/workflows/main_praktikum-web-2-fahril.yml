@@ -30,6 +30,7 @@ jobs:
 
       - name: Install npm dependencies and build frontend
         run: 
+        |
           npm install
           npm run build
 
